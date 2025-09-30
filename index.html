@@ -1,85 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick the Odd One</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background- <img src=>
-           background-size: cover;
-            background-repeat: no-repeat;
-            background-atta"https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg" 
-       alt="Sample Image" 
-       width="400">chment: fixed;
-            color: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pick the Odd One</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full screen height */
+      overflow: hidden; /* Prevent scroll */
+    }
 
-        h1 {
-            margin-top: 50px;
-            text-shadow: 2px 2px #000;
-        }
+    h1 {
+      margin: 10px 0;
+      text-shadow: 2px 2px #000;
+      font-size: 1.5rem;
+    }
 
-        .options {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            gap: 20px;
-        }
+    .options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 5px;
+    }
 
-        .options img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 5px solid #fff;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s, border-color 0.3s;
-        }
+    .options img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 3px solid #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, border-color 0.3s;
+    }
 
-        .options img:hover {
-            transform: scale(1.1);
-            border-color: yellow;
-        }
+    .options img:hover {
+      transform: scale(1.05);
+      border-color: yellow;
+    }
 
-        #result {
-            margin-top: 30px;
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 2px 2px #000;
-        }
-    </style>
+    #result {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 2px #000;
+    }
+
+    /* 📱 Small screen optimization */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .options img {
+        width: 90px;
+        height: 90px;
+      }
+
+      #result {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
-<body bgcolor="#000000">
-    <h1>Pick the Odd One Out!</h1>
-    <div class="options">
-        <img src="image1.jpg" alt="Option 1" onclick="checkAnswer(1)">
-        <img src="image2.jpg" alt="Option 2" onclick="checkAnswer(2)">
-        <img src="image3.jpg" alt="Option 3" onclick="checkAnswer(3)">
-        <img src="image4.jpg" alt="Option 4" onclick="checkAnswer(4)">
-    </div>
+<body>
+  <h1>Pick the Odd One Out!</h1>
+  <div class="options">
+    <img src="image1.jpg" alt="Option 1" onclick="checkAnswer(1)">
+    <img src="image2.jpg" alt="Option 2" onclick="checkAnswer(2)">
+    <img src="image3.jpg" alt="Option 3" onclick="checkAnswer(3)">
+    <img src="image4.jpg" alt="Option 4" onclick="checkAnswer(4)">
+  </div>
+  <div id="result"></div>
 
-    <div id="result"></div>
+  <script>
+    // Set which image is the odd one
+    const oddOne = 2;
 
-    <script>
-        // Set which image is the odd one (change number according to your image)
-        const oddOne = 2;
-
-        function checkAnswer(choice) {
-            const result = document.getElementById('result');
-            if(choice === oddOne) {
-                result.textContent = "✅ Correct! The other buffaloes are seen in Kerala and the one choose is an African wild buffalo 😊";
-                result.style.color = "aqua";
-            } else {
-                result.textContent = "❌ Wrong! Try again, Don't be a Pooth.";
-                result.style.color = "red";
-            }
-        }
-    </script>
+    function checkAnswer(choice) {
+      const result = document.getElementById('result');
+      if (choice === oddOne) {
+        result.textContent = "✅ Correct! The other buffaloes are from Kerala and the chosen one is an African wild buffalo 😊";
+        result.style.color = "aqua";
+      } else {
+        result.textContent = "❌ Wrong! Try again, Don't be a Pooth.";
+        result.style.color = "red";
+      }
+    }
+  </script>
 </body>
 </html>
+
+
